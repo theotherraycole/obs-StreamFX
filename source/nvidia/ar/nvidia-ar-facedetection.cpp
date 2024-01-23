@@ -90,7 +90,8 @@ void ar::facedetection::set_tracking_limit(size_t v)
 		throw cv::exception("BoundingBoxesConfidence", err);
 	}
 	if (auto err = set(P_NVAR_CONFIG "Temporal", (v == 1)); err != cv::result::SUCCESS) {
-		throw cv::exception("Temporal", err);
+		//throw cv::exception("Temporal", err);
+		v = 1;
 	}
 
 	// Mark effect dirty for reload.
