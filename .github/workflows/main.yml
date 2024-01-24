@@ -461,10 +461,9 @@ jobs:
       shell: bash
       run: |
         cmake --build "build/ci" --config RelWithDebInfo --target StreamFX
-      - name: Upload a Build Artifact
+    - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.3.0
       with:
-        # Artifact name
         name: StreamFX.dll # optional, default is artifact
         path: "${{ github.workspace }}/build/package/ci/RelWithDebInfo"
 
